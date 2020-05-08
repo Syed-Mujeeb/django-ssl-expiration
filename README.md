@@ -33,7 +33,6 @@ Then install the dependencies:
 
 Once `pip` has finished downloading the dependencies:
 
-(venv)$ python manage.py runserver
 ```
 
 Configure the SSL/settings.py
@@ -47,5 +46,8 @@ Configure the SSL/template/index.html
 Change the value of sender email to the one which you given in settings . This will avoid confusion and help us to know from which email we are sending the emails
 ```
 
+```sh
+(venv)$ python manage.py runserver
+```
 
 And navigate to `http://127.0.0.1:8000/`.
