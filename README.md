@@ -11,8 +11,6 @@ To send email user should enable less secure apps and imap
 - [Python 3.5+]()
 - [To send mail - Enable Less Secure Apps](https://myaccount.google.com/lesssecureapps)
 - [Enable IMAP](https://mail.google.com/mail/u/0/?tab=rm&ogbl#settings/fwdandpop)
-Note : Here we used gmail for sending the mails
-
 
 ## Setup
 
@@ -32,22 +30,22 @@ source venv/bin/activate
 Then install the dependencies:
 
 ```sh
-(env)$ pip install -r requirements.txt
+(venv)$ pip install -r requirements.txt
 
 Once `pip` has finished downloading the dependencies:
-```sh
+
 (venv)$ python manage.py runserver
 ```
 
 Configure the SSL/settings.py
 ```sh
-EMAIL_HOST_USER =  'Add sender email'
-EMAIL_HOST_PASSWORD =  'Add password'
+EMAIL_HOST_USER =  ' Sender_email_id '
+EMAIL_HOST_PASSWORD =  '  Sender_password'
 ```
 
 Configure the SSL/template/index.html
 ```sh
-Add sender email in input field to denote that we are using it only to send emails(read only)
+Change the value of sender email to the one which you given in settings . This will avoid confusion and help us to know from which email we are sending the emails
 ```
 
 
