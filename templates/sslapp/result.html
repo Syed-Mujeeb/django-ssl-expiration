@@ -1,0 +1,70 @@
+{% extends 'sslapp/base.html' %}
+{% load static %}
+
+{% block css %}
+
+
+{% endblock css %}
+
+{% block content %}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+    {% if messages %}
+    {% for message in messages %}
+
+    <div id="myAlert" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+         {{ message }}
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"> &times; </span>
+
+        </button>
+        {% endfor %}
+        {% endif %}
+    </div>
+          <div class="row">
+                <a class="btn btn-info mb-2  btn-md col-md-2" href="/" role="button">
+                  <i class="fa fa-arrow-left"></i> &nbsp; Back</a>
+          </div>
+                </div>
+
+    <table class="  table table-active text-center table-hover  " >
+
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Host Name</th>
+            <th scope="col">Expiry</th>
+        </tr>
+      </thead>
+<tbody>
+    {% for host,expiry in Host_table %}
+
+    {% if expiry <= 15 %}
+
+        <tr class="table-danger">
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ host }}</td>
+            <td>{{ expiry }} </td>
+        </tr>
+
+    {% else %}
+    <tr class="table-primary">
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ host }}</td>
+            <td>{{ expiry }} </td>
+        </tr>
+
+    {% endif %}
+    {% endfor %}
+
+</tbody>
+    </table></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

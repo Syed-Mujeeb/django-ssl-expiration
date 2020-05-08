@@ -1,0 +1,63 @@
+{% extends 'sslapp/base.html' %}
+{% load static %}
+
+{% block css %}
+
+
+{% endblock css %}
+
+{% block content %}
+
+<div class="card mb-4">
+    <div class="card-body">
+    {% if messages %}
+    {% for message in messages %}
+
+    <div id="myAlert" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+         {{ message }}
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"> &times; </span>
+
+        </button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+        <div class="form-group" >
+    <label for="exampleFormControlInput1">Sender Email Address:</label>
+        <input class="form-control" type="text"  name ="s_email" id="exampleFormControlInput1" value="hsyedmujeeb8@gmail.com" onfocus="this.blur()" readonly="readonly">
+    </div>
+    <div class="alert alert-primary" role="alert"><b>Note</b> : In order to send the ssl expiry message,sender should enable less secure apps in his/her gmail.
+        <div class="tab">
+        <a href="https://myaccount.google.com/lesssecureapps" class="alert-link">
+          Enable Less secure apps
+        </a>
+            </div>
+    </div>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+
+
+
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Receiver Email Address</label>
+    <textarea class="form-control tool" name="r_email" id="exampleFormControlTextarea1" rows="2" placeholder="name1@gmail.com,name2@gmail.com" required>{% if RET_REMAIL %}{{RET_REMAIL}}{% endif %}</textarea>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter the host name:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2 textarea" name="host" placeholder="host name1,host name2" required>{% if RET_HOST %}{{RET_HOST}}{% endif %}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary mt-2 text" id="myBtn" data-toggle="modal" data-target="#exampleModal" onsubmit="load()"> Submit</button>
+
+</form>
+</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock script %}
