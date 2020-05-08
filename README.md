@@ -21,9 +21,10 @@ $ git clone https://github.com/Syed-Mujeeb/django-ssl-expiration.git
 
 Create and activate a virtualenv:
 
-```bash
 virtualenv venv
+
 source venv/bin/activate 
+
 ```
 
 Then install the dependencies:
