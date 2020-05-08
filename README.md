@@ -17,8 +17,7 @@ To send email user should enable less secure apps and imap
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/gocardless/sample-django-app.git
-```
+$ git clone https://github.com/Syed-Mujeeb/django-ssl-expiration.git
 
 Create and activate a virtualenv:
 
